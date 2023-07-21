@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-O-Mate</title>
+    <link rel="shortcut icon" href="./assets/favicon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./chess.js" defer></script>
+    <script src="./index.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <h1>Check-O-Mate</h1>
+        <button class="reset-btn btn" id="reset">Reset</button>
+    </header>
+    <div class="board" id="board">
+        <!-- <div class="box" id="8a"><div class="piece rook black">R</div></div>
+        <div class="box dark" id="8b"><div class="piece knight black">N</div></div>
+        <div class="box" id="8c"><div class="piece bishop black">B</div></div>
+        <div class="box dark" id="8d"><div class="piece queen black">Q</div></div>
+        <div class="box" id="8e"><div class="piece king black">K</div></div>
+        <div class="box dark" id="8f"><div class="piece bishop black">B</div></div>
+        <div class="box" id="8g"><div class="piece knight black">N</div></div>
+        <div class="box dark" id="8h"><div class="piece rook black">R</div></div>
+        <div class="box dark" id="7a"><div class="piece pawn black">P</div></div>
+        <div class="box" id="7b"><div class="piece pawn black">P</div></div>
+        <div class="box dark" id="7c"><div class="piece pawn black">P</div></div>
+        <div class="box" id="7d"><div class="piece pawn black">P</div></div>
+        <div class="box dark" id="7e"><div class="piece pawn black">P</div></div>
+        <div class="box" id="7f"><div class="piece pawn black">P</div></div>
+        <div class="box dark" id="7g"><div class="piece pawn black">P</div></div>
+        <div class="box" id="7h"><div class="piece pawn black">P</div></div>
+        <div class="box" id="6a"></div>
+        <div class="box dark" id="6b"></div>
+        <div class="box" id="6c"></div>
+        <div class="box dark" id="6d"></div>
+        <div class="box" id="6e"></div>
+        <div class="box dark" id="6f"></div>
+        <div class="box" id="6g"></div>
+        <div class="box dark" id="6h"></div>
+        <div class="box dark" id="5a"></div>
+        <div class="box" id="5b"></div>
+        <div class="box dark" id="5c"></div>
+        <div class="box" id="5d"></div>
+        <div class="box dark" id="5e"></div>
+        <div class="box" id="5f"></div>
+        <div class="box dark" id="5g"></div>
+        <div class="box" id="5h"></div>
+        <div class="box" id="4a"></div>
+        <div class="box dark" id="4b"></div>
+        <div class="box" id="4c"></div>
+        <div class="box dark" id="4d"></div>
+        <div class="box" id="4e"></div>
+        <div class="box dark" id="4f"></div>
+        <div class="box" id="4g"></div>
+        <div class="box dark" id="4h"></div>
+        <div class="box dark" id="3a"></div>
+        <div class="box" id="3b"></div>
+        <div class="box dark" id="3c"></div>
+        <div class="box" id="3d"></div>
+        <div class="box dark" id="3e"></div>
+        <div class="box" id="3f"></div>
+        <div class="box dark" id="3g"></div>
+        <div class="box" id="3h"></div>
+        <div class="box" id="2a"><div class="piece pawn white">P</div></div>
+        <div class="box dark" id="2b"><div class="piece pawn white">P</div></div>
+        <div class="box" id="2c"><div class="piece pawn white">P</div></div>
+        <div class="box dark" id="2d"><div class="piece pawn white">P</div></div>
+        <div class="box" id="2e"><div class="piece pawn white">P</div></div>
+        <div class="box dark" id="2f"><div class="piece pawn white">P</div></div>
+        <div class="box" id="2g"><div class="piece pawn white">P</div></div>
+        <div class="box dark" id="2h"><div class="piece pawn white">P</div></div>
+        <div class="box dark" id="1a"><div class="piece rook white">R</div></div>
+        <div class="box" id="1b"><div class="piece knight white">N</div></div>
+        <div class="box dark" id="1c"><div class="piece bishop white">B</div></div>
+        <div class="box" id="1d"><div class="piece queen white">Q</div></div>
+        <div class="box dark" id="1e"><div class="piece king white">K</div></div>
+        <div class="box" id="1f"><div class="piece bishop white">B</div></div>
+        <div class="box dark" id="1g"><div class="piece knight white">N</div></div>
+        <div class="box" id="1h"><div class="piece rook white">R</div></div> -->
+    </div>
+    <div class="controls" id="controls">
+        <button class="toggle-btn" id="flip">Toggle flip</button>
+        <div class="result" id="result">
+            <h3>Game Over!</h3>
+            <span id="winner"></span> won by <span id="type"></span>
+        </div>
+    </div>
+</body>
+</html>
