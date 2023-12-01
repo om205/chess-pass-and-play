@@ -81,7 +81,14 @@
         <div class="box" id="1h"><div class="piece rook white">R</div></div> -->
     </div>
     <div class="controls" id="controls">
-        <button class="toggle-btn" id="flip">Toggle flip</button>
+        <!-- <button class="toggle-btn" id="flip">Toggle flip</button> -->
+        <label class="label">
+            <div class="label-text">Enable Flip</div>
+            <div class="toggle">
+              <input class="toggle-state" type="checkbox" name="check" value="check" id="flip"/>
+              <div class="indicator"></div>
+            </div>
+          </label>
         <div class="result" id="result">
             <h3>Game Over!</h3>
             <span id="winner"></span> won by <span id="type"></span>

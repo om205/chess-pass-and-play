@@ -105,18 +105,25 @@ body {
         font-size: 0.75rem;
     }
     .board {
-        width: 200px;
+        /* width: 200px;
         height: 200px;
-        margin: 5%;
+        margin: 5%; */
+        width: 96vw;
+        height: 96vw;
+        margin: 0 0 0 auto;
     }
     .box {
-        width: 25px;
-        height: 25px;
+        /* width: 25px;
+        height: 25px; */
+        width: 12vw;
+        height: 12vw;
     }
     .piece {
-        width: 20px;
-        height: 20px;
+        /* width: 20px;
+        height: 20px; */
         font-size: 1em;
+        width: 10vw;
+        height: 10vw;
     }
 }
 
@@ -197,4 +204,51 @@ body {
     padding: 20px;
     box-sizing: border-box;
     visibility: hidden;
+  }
+
+  /* Toggle button css */
+  
+  .label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #394a56;
+    margin-top: 20px;
+  }
+  
+  .label-text {
+    margin-right: 20%;
+    font-weight: bold;
+  }
+  
+  .toggle {
+    isolation: isolate;
+    position: relative;
+    height: 20px;
+    width: 40px;
+    border-radius: 15px;
+    border: 2px solid black;
+    overflow: hidden;
+    background: #323232;
+  }
+  
+  .toggle-state {
+    display: none;
+  }
+  
+  .indicator {
+    height: 100%;
+    width: 200%;
+    background: #979696;
+    border-radius: 15px;
+    transform: translate3d(-75%, 0, 0);
+    transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+    box-shadow:
+      -24px 0px 8px 0px #d4d4d4,
+      8px 0px 18px 0px #707070;
+  }
+  
+  .toggle-state:checked ~ .indicator {
+    transform: translate3d(25%, 0, 0);
   }

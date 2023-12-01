@@ -187,6 +187,43 @@ class Board {
         return false;
     }
 
+    canPreventMate(color) {
+        const opponentMoves = [];
+        for(let row = 0; row < 8; row++) {
+            for(let col = 0; col < 8; col++) {
+                if(this.board[row][col].piece?.color === color) {
+                    this.board[row][col].piece.getMoves();
+                    opponentMoves.push({
+                        piece: this.board[row][col].piece, 
+                        moves: this.board[row][col].piece.moves
+                    });
+                }
+            }
+        }
+        console.log('opponent moves: ', opponentMoves)
+        for(let i = 0; i < opponentMoves.length; i++) {
+            for(let j = 0; j < opponentMoves[i].moves.length; j++) {
+                const move = opponentMoves[i].moves[j];
+                const piece = opponentMoves[i].piece;
+                const prev = piece.box;
+                const curr = move;
+                const additionalMove = {prev, curr, piece};
+                if(!this.isKingInCheck(color, additionalMove)) return true;
+            }
+        }
+        // console.log('opponent moves: ', opponentMoves)
+        // for(let i = 0; i < opponentMoves.length; i++) {
+        //     const move = opponentMoves[i];
+        //     console.log(move)
+        //     const piece = move.piece;
+        //     const prev = piece.box;
+        //     const curr = move;
+        //     const additionalMove = {prev, curr, piece};
+        //     if(!this.isKingInCheck(color, additionalMove)) return true;
+        // }
+        // return false;
+    }
+
     isInsideBoard(row, col) {
         return row >= 0 && row < 8 && col >= 0 && col < 8;
     }
@@ -284,7 +321,9 @@ class Piece {
             const opponent = this.color === 'white' ? 'black' : 'white';
             if(this.board.isKingInCheck(opponent)) 
             {
-                if(this.board.kings[opponent].moves.length)
+                console.log('king moves: ', this.board)
+                
+                if(this.board.canPreventMate(opponent))
                 audio.check.play();
                 else {
                     this.board.checkmate(opponent);
